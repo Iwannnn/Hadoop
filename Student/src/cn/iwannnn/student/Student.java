@@ -32,6 +32,7 @@ public class Student implements Writable {
 	@Override
 	public void write(DataOutput out) throws IOException {
 		out.writeUTF(name);
+		out.writeInt(total);
 		out.writeInt(chinese);
 		out.writeInt(engilsh);
 		out.writeInt(math);

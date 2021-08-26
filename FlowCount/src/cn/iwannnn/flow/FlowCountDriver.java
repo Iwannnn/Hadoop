@@ -13,7 +13,6 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 public class FlowCountDriver {
 	public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
 		Configuration conf = new Configuration();
-		conf.set("dfs.replication", "1");
 		conf.addResource(new Path("E:/env/hadoop-2.7.1/etc/hadoop/hdfs-site.xml"));
 		Job job = Job.getInstance(conf, "JobName");
 		job.setJarByClass(cn.iwannnn.flow.FlowCountDriver.class);
