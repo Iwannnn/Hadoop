@@ -3,3 +3,4 @@ eclipse/
 */lib/*
 */bin/*
 *.class
+/.metadata/
