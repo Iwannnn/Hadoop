@@ -174,5 +174,6 @@
 	<classpathentry kind="lib" path="E:/env/hadoop-2.7.1/share/hadoop/common/lib/activation-1.1.jar"/>
 	<classpathentry kind="lib" path="E:/env/hadoop-2.7.1/share/hadoop/common/hadoop-nfs-2.7.1.jar"/>
 	<classpathentry kind="lib" path="E:/env/hadoop-2.7.1/share/hadoop/common/hadoop-common-2.7.1.jar"/>
+	<classpathentry kind="lib" path="lib/lombok-1.18.20.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
