@@ -1,4 +1,4 @@
-package cn.iwannnn.mprofit;
+package cn.iwannnn.profit;
 
 import java.io.DataInput;
 import java.io.DataOutput;
@@ -9,7 +9,7 @@ import org.apache.hadoop.io.Writable;
 import lombok.Data;
 
 @Data
-public class MProfit implements Writable {
+public class Profit implements Writable {
 
 	private int month;
 
