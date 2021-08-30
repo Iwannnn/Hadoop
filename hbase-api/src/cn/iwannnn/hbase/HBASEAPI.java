@@ -1,16 +1,23 @@
 package cn.iwannnn.hbase;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.NavigableMap;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;
 import org.apache.hadoop.hbase.HColumnDescriptor;
 import org.apache.hadoop.hbase.HTableDescriptor;
 import org.apache.hadoop.hbase.TableName;
+import org.apache.hadoop.hbase.client.Delete;
+import org.apache.hadoop.hbase.client.Get;
 import org.apache.hadoop.hbase.client.HBaseAdmin;
 import org.apache.hadoop.hbase.client.HTable;
 import org.apache.hadoop.hbase.client.Put;
+import org.apache.hadoop.hbase.client.Result;
+import org.apache.hadoop.hbase.client.ResultScanner;
+import org.apache.hadoop.hbase.client.Scan;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.junit.Before;
 import org.junit.Test;
@@ -70,5 +77,48 @@ public class HBASEAPI {
 		table.close();
 		long endTime = System.currentTimeMillis();
 		System.out.println(endTime - startTime + "ms");
+	}
+
+	@Test
+	public void testGet() throws Exception {
+		HTable table = new HTable(conf, "student");
+		Get get = new Get(Bytes.toBytes("zhangsan_001"));
+		Result res = table.get(get);
+		NavigableMap<byte[], byte[]> familyMap = res.getFamilyMap(Bytes.toBytes("basic_info"));
+		System.out.println(res);
+		System.out.println(Bytes.toString(familyMap.get(Bytes.toBytes("id"))));
+		byte[] values = res.getValue(Bytes.toBytes("basic_info"), Bytes.toBytes("name"));
+		System.out.println(Bytes.toString(values));
+		table.close();
+	}
+
+	@Test
+	public void testScan() throws Exception {
+		HTable table = new HTable(conf, "student");
+		Scan scan = new Scan(Bytes.toBytes("zhangsan_001"));
+		ResultScanner scanner = table.getScanner(scan);
+		Iterator<Result> iterator = scanner.iterator();
+		while (iterator.hasNext()) {
+			Result result = iterator.next();
+			byte[] value = result.getValue(Bytes.toBytes("basic_info"), Bytes.toBytes("name"));
+			System.out.println(Bytes.toString(value));
+		}
+		table.close();
+	}
+
+	@Test
+	public void testDel() throws Exception {
+		HTable table = new HTable(conf, "student");
+		Delete del = new Delete(Bytes.toBytes("lisi_002"));
+		table.delete(del);
+		table.close();
+	}
+
+	@Test
+	public void testDelTable() throws Exception {
+		HBaseAdmin admin = new HBaseAdmin(conf);
+		admin.disableTable("table02");
+		admin.deleteTable("table02");
+		admin.close();
 	}
 }
