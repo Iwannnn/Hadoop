@@ -11,7 +11,7 @@ public class GSODUtil {
 	// INFO
 	public static final byte[] INFO_STN = Bytes.toBytes("STN");
 	public static final byte[] INFO_WBAN = Bytes.toBytes("WBAN");
-	public static final byte[] INFO_DATA = Bytes.toBytes("DATA");
+	public static final byte[] INFO_DATE = Bytes.toBytes("DATA");
 	// DATA
 	public static final byte[] DATA_TEMP = Bytes.toBytes("TEMP");
 	public static final byte[] DATA_DEWP = Bytes.toBytes("DEWP");
@@ -31,5 +31,9 @@ public class GSODUtil {
 	public static final byte[] DATA_SOIP = Bytes.toBytes("SOIP");
 	public static final byte[] DATA_HAIL = Bytes.toBytes("HAIL");
 	public static final byte[] DATA_THUNDER = Bytes.toBytes("THUNDER");
-	public static final byte[] DATA_TOCT = Bytes.toBytes("TOCT");
+	public static final byte[] DATA_TORCF = Bytes.toBytes("TORCF");
+
+	public static final byte[][] COLUMNS = { INFO_STN, INFO_WBAN, INFO_DATE, DATA_TEMP, DATA_DEWP, DATA_SLP, DATA_STP,
+			DATA_VISIB, DATA_WDSP, DATA_MXSPD, DATA_GUST, DATA_MAX, DATA_MIN, DATA_PRCP, DATA_SNDP, DATA_FOG, DATA_ROD,
+			DATA_SOIP, DATA_HAIL, DATA_THUNDER, DATA_TORCF };
 }

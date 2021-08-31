@@ -174,7 +174,6 @@
 	<classpathentry kind="lib" path="E:/env/hadoop-2.7.1/share/hadoop/common/lib/activation-1.1.jar"/>
 	<classpathentry kind="lib" path="E:/env/hadoop-2.7.1/share/hadoop/common/hadoop-nfs-2.7.1.jar"/>
 	<classpathentry kind="lib" path="E:/env/hadoop-2.7.1/share/hadoop/common/hadoop-common-2.7.1.jar"/>
-	<classpathentry kind="lib" path="lib/lombok-1.18.20.jar"/>
 	<classpathentry kind="lib" path="lib/activation-1.1.jar"/>
 	<classpathentry kind="lib" path="lib/aopalliance-1.0.jar"/>
 	<classpathentry kind="lib" path="lib/asm-3.1.jar"/>
@@ -279,6 +278,7 @@
 	<classpathentry kind="lib" path="lib/junit-4.11.jar"/>
 	<classpathentry kind="lib" path="lib/libthrift-0.9.0.jar"/>
 	<classpathentry kind="lib" path="lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="lib/lombok-1.18.20.jar"/>
 	<classpathentry kind="lib" path="lib/management-api-3.0.0-b012.jar"/>
 	<classpathentry kind="lib" path="lib/metrics-core-2.2.0.jar"/>
 	<classpathentry kind="lib" path="lib/netty-3.6.6.Final.jar"/>
